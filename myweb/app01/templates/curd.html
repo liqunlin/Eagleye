@@ -1,0 +1,31 @@
+﻿<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数据展示平台</title>
+</head>
+
+<style>
+body{
+    text-align: center;
+}
+#tt{
+  margin: 0 auto;
+}
+</style>
+
+<body>
+
+<table id="tt" border="2">
+	<tr>
+		<td><b>用户编号</b></td> <td><b>用户姓名</b></td> <td><b>用户年龄</b></td>   <td><b>操作</b></td>	
+	</tr>
+	{%  for d in data %}
+		<tr {% if forloop.counter|divisibleby:"2"  %} style="background: gainsboro" {% else %} style="background: aquamarine"  {% endif %}  >  <td>{{ d.id }}</td> <td>{{ d.name }}</td> <td>{{ d.age }}</td><td><a href="/delete?id={{ d.id }}"><button>删除</button></a>  <a href="/add.html"><button>添加</button></a>  <a href="/showid?id={{ d.id }}"><button>修改</button></a> </td> </tr>
+	{% endfor %}
+
+</table>
+</body>
+
+</html>
+

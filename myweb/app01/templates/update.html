@@ -1,0 +1,19 @@
+﻿<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>修改个人信息</title>
+</head>
+<body>
+
+
+<form action="/add" method="post" >
+    <input type="hidden" name="id"  value="{{ data.id }}" >
+    名字：<input name="name" type="text" value="{{ data.name  }}"><br/>
+    年龄：<input name="age" type="text" value="{{ data.age }}"><br/>
+      <input type="submit" value="保存"/>
+
+
+</form>
+
+</body>
+</html>

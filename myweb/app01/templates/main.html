@@ -1,0 +1,31 @@
+﻿<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>资产信息平台</title>
+</head>
+
+<style>
+body{
+    text-align: center;
+}
+#tt{
+  margin: 0 auto;
+}
+</style>
+
+<body>
+<table id="tt" border="2">
+	<tr>
+		<!--<td><b>用户编号</b></td> <td><b>姓名</b></td> <td><b>部门</b></td> <td><b>设备编号</b></td> <td><b>设备种类</b></td> <td><b>设备子类</b></td> <td><b>设备型号</b></td> <td><b>出厂编号</b></td> <td><b>使用状态</b></td> <td><b>备注</b></td>   <td><b>操作</b></td>-->
+		<th>用户编号</th> <th>姓名</th> <th>部门</th> <th>设备编号</th> <th>设备种类</th> <th>设备子类</th> <th>设备型号</th> <th>出厂编号</th> <th>使用状态</th> <th>备注</th>   <th>操作</th>
+	</tr>
+	{%  for d in data %}
+		<tr {% if forloop.counter|divisibleby:"2"  %} style="background: gainsboro" {% else %} style="background: aquamarine"  {% endif %}  >  <td>{{ d.id }}</td> <td>{{ d.username }}</td> <td>{{ d.department }}</td> <td>{{ d.device_id }}</td> <td>{{ d.device_variety }}</td> <td>{{ d.device_sub_variety }}</td> <td>{{ d.device_type }}</td> <td>{{ d.serial_number }}</td> <td>{{ d.usage_state }}</td> <td>{{ d.remark }}</td> <td><nav><a href="/delete?id={{ d.id }}">删除</a>  <a href="/add.html">添加</a>  <a href="/update?id={{ d.id }}">修改</a></nav></td> </tr>
+	{% endfor %}
+
+</table>
+</body>
+
+</html>
+

@@ -1,0 +1,25 @@
+﻿<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>修改资产信息</title>
+</head>
+<body>
+
+
+<form action="/add" method="post" >
+    <input type="hidden" name="id"  value="{{ data.id }}" >
+    姓名：<input name="username" type="text" value="{{ data.username  }}"><br/>
+    部门：<input name="department" type="text" value="{{ data.department }}"><br/>
+	设备编号：<input name="device_id" type="text" value="{{ data.device_id }}"><br/>
+	设备种类：<input name="device_variety" type="text" value="{{ data.device_variety }}"><br/>
+	设备子类：<input name="device_sub_variety" type="text" value="{{ data.device_sub_variety }}"><br/>
+	设备型号：<input name="device_type" type="text" value="{{ data.device_type }}"><br/>
+	出厂编号：<input name="serial_number" type="text" value="{{ data.serial_number }}"><br/>
+	使用状态：<input name="usage_state" type="text" value="{{ data.usage_state }}"><br/>
+	备注：<input name="remark" type="text" value="{{ data.remark }}"><br/>
+      <input type="submit" value="保存"/>
+
+</form>
+
+</body>
+</html>
